@@ -10,7 +10,7 @@ class Tb64Cpp < Formula
 
   def install
     vcpkg_root = ENV["VCPKG_ROOT"]
-    system "cmake", "-S", ".", "-B", "build", "-DVCPKG_ROOT=#{vcpkg_root}", *std_cmake_arg
+    system "cmake", "-S", ".", "-B", "build", "-DVCPKG_ROOT=#{vcpkg_root}", *std_cmake_args
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
   end
