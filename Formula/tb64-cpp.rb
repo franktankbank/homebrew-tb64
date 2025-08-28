@@ -9,7 +9,7 @@ class Tb64Cpp < Formula
   depends_on "vcpkg" => :build
 
   def install
-    vcpkg_root = ENV["VCPKG_ROOT"] || "#{ENV["HOME"]}/vcpkg"
+    vcpkg_root = ENV["VCPKG_ROOT"]
     system "cmake", "-S", ".", "-B", "build", "-DVCPKG_ROOT=#{vcpkg_root}", *std_cmake_arg
     system "cmake", "--build", "build"
     system "cmake", "--install", "build"
