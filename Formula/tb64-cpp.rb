@@ -9,7 +9,7 @@ class Tb64Cpp < Formula
 
   resource "vcpkg" do
     url "https://github.com/microsoft/vcpkg/archive/refs/tags/2025.08.27.tar.gz"
-    sha256 "7ca5a754e4fbaa0f1d36c5f19ceef4ed47c65312fed298bb3dcf73c276dbe9b"
+    sha256 "b7ca5a754e4fbaa0f1d36c5f19ceef4ed47c65312fed298bb3dcf73c276dbe9b"
   end
 
   def install
