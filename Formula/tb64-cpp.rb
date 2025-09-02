@@ -6,6 +6,7 @@ class Tb64Cpp < Formula
   license "MIT"
 
   depends_on "cmake" => :build
+  # depends_on "cpp-gsl" => :build
 
   resource "vcpkg" do
     url "https://github.com/microsoft/vcpkg/archive/refs/tags/2025.08.27.tar.gz"
@@ -17,6 +18,7 @@ class Tb64Cpp < Formula
     
     cd "vcpkg" do
       system "./bootstrap-vcpkg.sh", "-disableMetrics"
+      system "git", "status"
     end
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/vcpkg/scripts/buildsystems/vcpkg.cmake", "-DHOMEBREW=ON", *std_cmake_args
     system "cmake", "--build", "build"
