@@ -21,6 +21,7 @@ class Tb64Cpp < Formula
         system "cmake", "--build", "."
         system "cmake", "--install", "."
       end
+    end
     
     cd "vcpkg" do
       system "git", "init"
