@@ -13,7 +13,7 @@ class Tb64Cpp < Formula
     cd "vcpkg" do
       system "git", "init"
       system "git", "remote", "add", "upstream", "https://github.com/microsoft/vcpkg.git"
-      system "git", "pull", "upstream", "2025.08.27", "--depth=1"
+      system "git", "pull", "upstream", "master"
       system "./bootstrap-vcpkg.sh", "-disableMetrics"
     end
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/vcpkg/scripts/buildsystems/vcpkg.cmake", "-DHOMEBREW=ON", *std_cmake_args
