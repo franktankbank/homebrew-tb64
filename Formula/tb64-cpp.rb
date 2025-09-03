@@ -8,7 +8,7 @@ class Tb64Cpp < Formula
   depends_on "cmake" => :build
 
   def install
-    system "mkdir" "#{buildpath}/vcpkg"
+    system "mkdir", "#{buildpath}/vcpkg"
     
     cd "vcpkg" do
       system "git", "init"
