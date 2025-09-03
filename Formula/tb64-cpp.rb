@@ -6,19 +6,15 @@ class Tb64Cpp < Formula
   license "MIT"
 
   depends_on "cmake" => :build
-  # depends_on "cpp-gsl" => :build
-
-  resource "vcpkg" do
-    url "https://github.com/microsoft/vcpkg/archive/refs/tags/2025.08.27.tar.gz"
-    sha256 "b7ca5a754e4fbaa0f1d36c5f19ceef4ed47c65312fed298bb3dcf73c276dbe9b"
-  end
 
   def install
-    resource("vcpkg").stage buildpath/"vcpkg"
+    system "mkdir" "#{buildpath}/vcpkg"
     
     cd "vcpkg" do
+      system "git", "init"
+      system "git", "remote", "add", "upstream", "https://github.com/microsoft/vcpkg.git"
+      system "git", "pull", "upstream", "2025.08.27", "--depth=1"
       system "./bootstrap-vcpkg.sh", "-disableMetrics"
-      system "git", "status"
     end
     system "cmake", "-S", ".", "-B", "build", "-DCMAKE_TOOLCHAIN_FILE=#{buildpath}/vcpkg/scripts/buildsystems/vcpkg.cmake", "-DHOMEBREW=ON", *std_cmake_args
     system "cmake", "--build", "build"
