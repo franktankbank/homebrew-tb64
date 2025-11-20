@@ -1,8 +1,8 @@
 class Tb64Cpp < Formula
   desc "A niche tool to encode text in base64 3 times. (C++ version)"
   homepage "https://github.com/franktankbank/tb64-cpp"
-  url "https://github.com/franktankbank/tb64-cpp/archive/refs/tags/v0.1.8.tar.gz"
-  sha256 "5908b434874e9b183e7988455f51c88fa1284231f85b3b2f162c67713edb199f"
+  url "https://github.com/franktankbank/tb64-cpp/archive/refs/tags/v0.1.9.tar.gz"
+  sha256 "19f4553feaf73e51345f67637dfcad025de88ab705891a5335c36a64e2ff1ced"
   license "GPL-3.0-only"
 
   depends_on "cmake" => :build
